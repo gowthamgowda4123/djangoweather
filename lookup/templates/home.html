@@ -1,5 +1,24 @@
 {% extends 'base.html' %} {% block content %}
+<!--<br/> {{ api.0 }}-->
 
-<h1> hello world</h1>
+{% if zip %} {{ zip }} {% endif %}
 
-{% endblock %}
+<br/> {% if api %} {% if api == "api error.." %} there is an error please check {% else %}
+<div class="jumbotron"><br/> <br/>
+    <br/>
+    <!--    <h1 class="display-4">{{ api.0.name }}:{{ api.city.name }}</h1>-->
+    <h3>place:{{api.data.city.name}}</h3><br/><br/>
+    <h3>Air quality index:{{api.data.aqi}}</h3>
+    <hr class="my-4">
+
+    <p>{{api.0.Discussion }}</p>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/> {% endif %} {% endif %}
+
+
+<br/> {% endblock %}
